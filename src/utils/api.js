@@ -7,8 +7,6 @@ const readAll = () => {
 }
 
 const update = (teamId, data) => {
-  console.log(teamId)
-  console.log(data)
   return fetch(`/.netlify/functions/teams-update/${teamId}`, {
     body: JSON.stringify(data),
     method: 'POST'

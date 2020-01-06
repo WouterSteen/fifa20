@@ -6,9 +6,8 @@ import './App.css'
 export default class App extends Component {
   state = {}
 
-
   componentDidMount() {
-    // Fetch all todos
+    // Fetch all teams
     api.readAll().then((teams) => {
       if (teams.message === 'unauthorized') {
         if (isLocalHost()) {
@@ -56,7 +55,7 @@ export default class App extends Component {
       api.update(teamId, {
         score: newScore
       }).then(() => {
-        console.log(`update todo ${teamId}`, newScore)
+        console.log(`update team ${teamId}`, newScore)
       }).catch((e) => {
         console.log('An API error occurred', e)
       })
@@ -108,13 +107,6 @@ export default class App extends Component {
         </div>
     )
   }
-}
-
-function removeOptimisticTodo(todos) {
-  // return all 'real' todos
-  return todos.filter((todo) => {
-    return todo.ref
-  })
 }
 
 function getTeamId(team) {
