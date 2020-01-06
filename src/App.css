@@ -1,60 +1,218 @@
-.App {
-  background: url(assets/fifa-20.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+.jumbotron {
+  background-color: transparent;
 }
 
-.team {
-  font-size: xx-large;
-  color: #FC5300;
+#app {
+  min-width: 247px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: #4B2B26;
+}
+
+header {
+  background-color: #FC6921;
+  padding: 10px 90px 15px 90px;
+  border-radius: 15px;
+  color: #fff;
+  width: 613px;
+  margin: 0 auto;
+  margin-top: -20px;
+  margin-bottom: 2em;
+  box-shadow: inset 0px -5px 1px #FC5300, 6px 7px 3px rgba(66, 66, 66, 0.5);
 }
 
 main {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.scorecontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  background-color: #fff;
+  padding: 5rem 90px;
+  border-radius: 10px;
+  box-shadow: inset 0px -5px 1px #FC5300, 6px 7px 3px rgba(66, 66, 66, 0.5);
+}
+
+.btn {
+  width: 300px;
+  margin-top: 0px;
+  cursor: default;
+  height: 300px;
+  border: 0;
+  border-radius: 20px;
+  outline: none !important;
+  font-size: 200px;
+  font-family: rubik;
+  text-shadow: 3px 3px 5px;
+  display: block;
+  position: relative;
+  z-index: 5;
+  top: 15px;
+}
+
+.btncontainer .btn {
+  background-color: #e85c5c;
+  box-shadow: inset 0 -5px 1px #842f2f, 6px 7px 3px rgba(66, 66, 66, 0.5);
+}
+
+.btncontainer:last-child .btn  {
+  background-color: #60e85c;
+  box-shadow: inset 0 -5px 1px #37842f, 6px 7px 3px rgba(66, 66, 66, 0.5);
+}
+
+.btncontainer {
+  display: inline-block;
+  margin: 0 45px 20px 45px;
   text-align: center;
 }
 
-button {
-  cursor: pointer;
+.scorebtn {
+  background-color: #5e5e5e;
+  color: #ddd;
   display: inline-block;
-  min-height: 1em;
-  outline: 0;
-  border: none;
-  vertical-align: baseline;
-  color: rgba(0,0,0,.6);
-  margin: 0 .25em 0 0;
-  padding: .78571429em 1.5em .78571429em;
-  text-transform: none;
-  text-shadow: none;
-  font-weight: 700;
-  line-height: 1em;
-  font-style: normal;
-  text-align: center;
-  text-decoration: none;
-  border-radius: .28571429rem;
-  -webkit-box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
-  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(34,36,38,.15) inset;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: opacity .1s ease,background-color .1s ease,color .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
-  transition: opacity .1s ease,background-color .1s ease,color .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
-  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease;
-  transition: opacity .1s ease,background-color .1s ease,color .1s ease,box-shadow .1s ease,background .1s ease,-webkit-box-shadow .1s ease;
-  -webkit-tap-highlight-color: transparent;
-  background-color: #21ba45;
-  color: #fff;
-  text-shadow: none;
-  background-image: none;
-  -webkit-box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
-  box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+  padding-top: 10px;
+  font-size: 45px;
+  border-radius: 10px;
+  box-shadow: inset 0 -4px 1px #383838, 4px 4px 3px rgba(66, 66, 66, 0.5);
+  border: 0;
+  top: -10px;
+  margin: 0px 10px 0px 10px;
+  width: 80px;
+  height: 80px;
+  transition: 0.5s;
+}
+
+@media (max-width: 1030px) {
+  .btn {
+    width: 250px;
+    height: 250px;
+    font-size: 170px;
+  }
+  .btncontainer {
+    margin: 0 30px -30px 30px;
+    height: 480px;
+  }
+  .scorecontainer {
+    height: 470px;
+  }
+}
+
+@media (max-width: 850px) {
+  .btn {
+    width: 230px;
+    height: 230px;
+    font-size: 150px;
+  }
+  .btncontainer {
+    display: block;
+    margin-bottom: -20px;
+    margin-left: 20px;
+    margin-right: 15px;
+  }
+  .scorecontainer {
+    width: 90%;
+    margin-left: 5%;
+    height: 470px;
+  }
+}
+
+@media (max-width:655px) {
+  .btn {
+    height: 210px;
+    width: 210px;
+    font-size: 140px;
+  }
+  header {
+    width: 80%;
+  }
+  .btncontainer {
+    height: 400px;
+    margin-top: 10px;
+  }
+  .scorecontainer {
+    height: auto;
+  }
+}
+
+@media (max-width:585px) {
+  header {
+    width: 90%;
+    margin-top: -10px;
+    padding: 1px 0 10px 0px;
+    margin-bottom: 15px;
+& h1 {
+    margin-top: 20px;
+  }
+}
+.scorecontainer {
+  flex-direction: column;
+  align-items: right;
+  height: auto;
+}
+.btn {
+  width: 300px;
+}
+.btncontainer {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  height: 440px;
+}
+}
+
+@media (max-width: 400px) {
+  header {
+    min-width: 276px;
+    margin-left: 18px;
+  }
+  .scorecontainer {
+    padding: 20px;
+    min-width: 276px;
+  }
+  .btncontainer {
+    width: 99%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  .btn {
+    width: 240px;
+    height: 220px;
+    margin: 0 auto;
+    font-size: 120px;
+  }
+  #roundcounter {
+    width: 90% !important;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: -10px;
+& h1 {
+    font-size: 25px;
+  }
+}
+.scorecontainer {
+  margin: 0;
+  width: 100%;
+}
+.btn {
+  width: 200px;
+  height: 200px;
+}
 }

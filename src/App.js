@@ -30,7 +30,13 @@ export default class App extends Component {
     const { teams } = this.state
     const teamId = event.target.dataset.id
     let currentScore = event.target.dataset.currentScore
-    let newScore = ++currentScore;
+    let newScore;
+
+    if (event.target.dataset.operator === 'minus') {
+      newScore = --currentScore;
+    } else {
+      newScore = ++currentScore;
+    }
 
     console.log(newScore);
     const updatedScores = teams.map((team, i) => {
@@ -72,21 +78,32 @@ export default class App extends Component {
 
       // only show delete button after create API response returns
       return (
-          <div className={"team"} key={i}>
+          <div className="btncontainer" key={i}>
             <h2>{data.team}</h2>
-            <h1>{data.score}</h1>
-            <button className='todo-create-button' data-id={id} data-current-score={data.score} onClick={this.saveScore}>
-              +1
+            <div className="btn">
+              {data.score}
+            </div>
+
+            <button className='scorebtn' data-id={id} data-current-score={data.score} data-operator={"plus"} onClick={this.saveScore}>
+              +
             </button>
+
+            <button className="scorebtn" data-id={id} data-current-score={data.score} data-operator={"minus"} onClick={this.saveScore}>-</button>
           </div>
       )
     })
   }
+
   render() {
     return (
         <div className="App">
           <main>
-            {this.renderTeams()}
+            <header>
+              <h1 className="text-center">FIFA20 Scoreboard</h1>
+            </header>
+            <div className="scorecontainer">
+              {this.renderTeams()}
+            </div>
           </main>
         </div>
     )
